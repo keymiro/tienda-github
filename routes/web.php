@@ -15,7 +15,7 @@ Route::bind('product', function($slug){
 });
 
 Route::get('/',[
-    'as'=>'home',
+    'as'=>'index',
     'uses'=>'StoreController@index'
     ]);
 
@@ -46,3 +46,28 @@ Route::get('cart/trash', [
 	'as' => 'cart-trash',
 	'uses' => 'CartController@trash'
 ]);
+
+Route::get('cart/update/{product}/{quantity?}', [
+	'as' => 'cart-update',
+	'uses' => 'CartController@update'
+]);
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//rutas a los controladores de los cruds
+Route::resource('user','UsersController');
+Route::resource('roles','RolesController');
+
+
+//rutas a los metodos del del controlador del crud de usuarios
+Route::get('users/{id}/create',['uses' => 'UsersController@create', 'as' => 'users.index.create']);
+Route::get('users/{id}/destroy',['uses' => 'UsersController@destroy', 'as' => 'users.index.destroy']);
+Route::get('users/{id}/edit',['uses' => 'UsersController@edit', 'as' => 'users.index.edit']);
+
+//rutas a los metodos del del controlador del crud de roles
+Route::get('roles/{id}/create',['uses' => 'RolesController@create', 'as' => 'roles.index.create']);
+Route::get('roles/{id}/destroy',['uses' => 'RolesController@destroy', 'as' => 'roles.index.destroy']);
+Route::get('roles/{id}/edit',['uses' => 'RolesController@edit', 'as' => 'roles.index.edit']);
+

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Persona;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -50,6 +51,11 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'apellidos' => ['required', 'string', 'max:255'],
+            'documento' => ['required', 'string', 'max:15'],
+            'direccion' => ['required', 'string', 'max:50'],
+            'fechanacimiento' => ['required', 'date'],
+            'telefono' => ['required', 'string', 'max:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -63,10 +69,31 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+
+        $persona = new Persona;
+        $persona->nombres = $data['name'];
+        $persona->apellidos = $data['apellidos'];
+        $persona->documento = $data['documento'];
+        $persona->direccion = $data['direccion'];
+        $persona->fechanacimiento = $data['fechanacimiento'];
+        $persona->telefono = $data['telefono'];
+        $persona->save();
+
+
+        $user = new User;
+        $user->name = $data['name'];
+        $user->apellidos = $data['apellidos'];
+        $user->persona_id = $persona->id;
+        $user->rol_id = 1;
+        $user->documento = $data['documento'];
+        $user->direccion = $data['direccion'];
+        $user->fechanacimiento = $data['fechanacimiento'];
+        $user->telefono = $data['telefono'];
+        $user->email = $data['email'];
+        $user->password = Hash::make($data['password']);
+        $user->save();
+        return $user;
+
+
     }
 }
