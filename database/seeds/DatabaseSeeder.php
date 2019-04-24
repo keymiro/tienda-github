@@ -11,10 +11,44 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        model::unguard();
+       // model::unguard();
         // $this->call(UsersTableSeeder::class);
+        //$this->call(CategoryTableSeeder::class);
+        //$this->call(ProductTableSeeder::class);
+        //model::unguard();
+
+        $this->truncateTables([
+
+            'roles','personas', 'proveedores','cjcs','products','categories'
+        ]);
+        model::unguard();
         $this->call(CategoryTableSeeder::class);
         $this->call(ProductTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(ProveedoresTableSeeder::class);
+        $this->call(CjcsTableSeeder::class);
         model::unguard();
+
     }
+
+    //$this->call(UsersTableSeeder::class);
+    //$this->call(PersonasTableSeeder::class);
+
+
+
+
+protected function truncateTables(array $tables){
+
+    DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+
+    foreach ($tables as $table){
+
+        DB::table($table)->truncate();
+
+    }
+
+    DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+
+}
+
 }
