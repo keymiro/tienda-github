@@ -6,13 +6,13 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="card">
-<div class="card-header"> LISTA ROLES </div> 
+<div class="card-header" align="center"> <p>LISTA ROLES </p></div>
 
 
 <a href="{{ route('roles.create') }}" class="btn btn-success" style="justify-content-right" >CREAR ROL</a><hr>
 <div  style="text-align:center" >
-<table class="table table-striped table-bordered table-dark table-hover" class="justify-content-center" class="text-justify" >
-<thead class="thead-light">
+<table class="table table-striped   table-hover" class="justify-content-center" class="text-justify" >
+<thead class="thead-dark">
 <th>ID</th>
 <th>NOMBRE</th>
 <th>DESCRIPCION</th>

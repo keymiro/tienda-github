@@ -34,17 +34,17 @@
                 @else
 
                     @if(Auth::user()->rol_id == 2)
-                        <li>
-                            <a class="btn btn-dark" href= "{{ url('user') }}">USUARIOS</a><tr></tr>
-                        </li>
+
+                            <a class="btn btn-success" href= "{{ url('user') }}">USUARIOS</a>
+
                     @endif
                     @if(Auth::user()->rol_id == 2)
-                        <li>
-                            <a class="btn btn-dark" href= "{{ url('roles') }}">ROLES</a>
-                        </li>
+
+                            <a  class="btn btn-success" href= "{{ url('roles') }}">ROLES</a>
+
                     @endif
 
-                    <li class="nav-item dropdown">
+                    <div class="nav-item dropdown">
                         <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle fa fa-user" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} </button> <span class="caret"></span>
 
@@ -59,7 +59,7 @@
                                 @csrf
                             </form>
                         </div>
-                    </li>
+                    </div>
                 @endguest
         
     </div>

@@ -6,13 +6,13 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="card">
-<div class="card-header"> LISTA DE USUARIOS </div> 
+<div class="card-header" align="center"> <p>LISTA DE USUARIOS </p> </div>
 
 
 <a href="{{ url('/user/create') }}" class="btn btn-success" style="justify-content-right" >CREAR USUARIO</a><hr>
 <div class="table-responsive" style="text-align:center">
-<table class="table table-striped table-dark table-bordered table-responsive table-hover" class="justify-content-center" >
-<thead class="thead-light">
+<table class="table table-striped   table-responsive table-hover" class="justify-content-center" >
+<thead class="thead-dark ">
 <th>ID</th>
 <th>NOMBRES</th>
 <TH>APELLIDOS</TH>
