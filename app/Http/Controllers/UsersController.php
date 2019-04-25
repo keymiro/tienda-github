@@ -140,6 +140,7 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    //metodo eliminar el curs de usuarios
     public function destroy($id)
     {
        
