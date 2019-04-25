@@ -7,7 +7,7 @@
 
 <div class="row justify-content-center">
     <div class="product-block">
-<div class="card card bg-secondary ">
+
 <div class="card-header" align="center">  <h1><span class="badge badge-primary">LISTA USUARIOS</span></h1></div>
     <br>
 <div class="container" align="center">
@@ -55,7 +55,7 @@
 
 
 
-</div>
+
 </div>
 </div>
 </div>
