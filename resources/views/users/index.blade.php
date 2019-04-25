@@ -4,7 +4,9 @@
 @section('content')
     <br>
 <div class="container">
+
 <div class="row justify-content-center">
+    <div class="product-block">
 <div class="card card bg-secondary ">
 <div class="card-header" align="center">  <h1><span class="badge badge-primary">LISTA USUARIOS</span></h1></div>
     <br>
@@ -22,7 +24,7 @@
 <TH>DIRECCION</TH>  
 <TH>TELEFONO</TH>
 <th>EMAIL</th>
-<th>ACCCION</th>
+<th>ACCION</th>
 </thead>
 <tbody>
 
@@ -53,7 +55,7 @@
 
 
 
-
+</div>
 </div>
 </div>
 </div>
