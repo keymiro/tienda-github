@@ -151,7 +151,7 @@ class UsersController extends Controller
     $persona = Persona::find($user->persona_id);
     Persona::where('id', $persona->id)->delete();
 
-    //$user->delete();
+    //$user->delete elminar usuario();
 
     return redirect('/user');
     }
