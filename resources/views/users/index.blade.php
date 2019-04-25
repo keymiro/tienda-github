@@ -38,7 +38,9 @@
 <TD>
 <a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-warning">EDITAR</a>
     <hr>
-<a href="{{ route('users.index.destroy' , $user->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">ELIMINAR</a>
+<a href="{{ route('users.index.destroy' , $user->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">
+    <i class="fa fa-remove"></i>
+</a>
 
 </TD>
 </tr>

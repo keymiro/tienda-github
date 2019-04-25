@@ -29,7 +29,9 @@
 
 <TD>
 <a href="{{ route('roles.index.edit', $roles->id) }}" class="btn btn-warning">EDITAR</a>
-<a href="{{ route('roles.index.destroy' , $roles->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">ELIMINAR</a>
+<a href="{{ route('roles.index.destroy' , $roles->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">
+    <i class="fa fa-remove"></i>
+</a>
 </TD>
 </tr>
 @endforeach
