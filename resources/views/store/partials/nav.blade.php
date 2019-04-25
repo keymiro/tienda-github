@@ -15,7 +15,7 @@
         <a class="nav-link" href="{{route('cart-show')}}"> <span class="fa fa-shopping-cart"></span></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="#">Conocenos</a>
+        <a class="nav-link" href="#">informate</a>
       </li>
       <li class="nav-item t">
         <a class="nav-link" href="#">Contactanos</a>
