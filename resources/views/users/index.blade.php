@@ -14,7 +14,7 @@
     <br>
     <div class="container-fluid table-responsive" style="text-align:center">
 <table class="table table-striped   table-responsive table-hover" class="justify-content-center" >
-<thead class="thead-dark ">
+<thead class="thead-dark " >
 <th>ID</th>
 <th>NOMBRES</th>
 <TH>APELLIDOS</TH>
