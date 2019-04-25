@@ -6,7 +6,7 @@
 <div class="container">
 <div class="row justify-content-center">
 <div class="card card bg-secondary">
-<div class="card-header" align="center"> <p>LISTA ROLES </p></div>
+<div class="card-header" align="center"> <h1><span class="badge badge-primary">LISTA ROLES</span></h1></div>
     <br>
 <div class="container" align="center">
 <a href="{{ route('roles.create') }}" class="btn btn-success" style="justify-content-right" >CREAR ROL</a><hr>
