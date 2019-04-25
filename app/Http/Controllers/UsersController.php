@@ -152,7 +152,7 @@ class UsersController extends Controller
     Persona::where('id', $persona->id)->delete();
 
     //$user->delete elminar usuari pienda es gay();
-
+    //mancipe es marica
     return redirect('/user');
     }
 }
