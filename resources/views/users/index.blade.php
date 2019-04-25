@@ -9,7 +9,7 @@
 <div class="card-header"> LISTA DE USUARIOS </div> 
 
 
-<a href="{{ url('/user/create') }}" class="btn btn-outline-success" style="justify-content-right" >CREAR USUARIO</a><hr>
+<a href="{{ url('/user/create') }}" class="btn btn-success" style="justify-content-right" >CREAR USUARIO</a><hr>
 <div class="table-responsive" style="text-align:center">
 <table class="table table-striped table-dark table-bordered table-responsive table-hover" class="justify-content-center" >
 <thead class="thead-light">
@@ -34,8 +34,9 @@
 <td> {{ $user -> telefono }}</td>
 <td> {{ $user -> email }}</td>
 <TD>
-<a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-outline-warning">EDITAR</a>
-<a href="{{ route('users.index.destroy' , $user->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-outline-danger">ELIMINAR</a>
+<a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-warning">EDITAR</a>
+    <hr>
+<a href="{{ route('users.index.destroy' , $user->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">ELIMINAR</a>
 </TD>
 </tr>
 @endforeach

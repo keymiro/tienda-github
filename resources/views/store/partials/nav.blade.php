@@ -35,12 +35,12 @@
 
                     @if(Auth::user()->rol_id == 2)
                         <li>
-                            <a class="btn btn-outline-dark" href= "{{ url('user') }}">USUARIOS</a><tr></tr>
+                            <a class="btn btn-dark" href= "{{ url('user') }}">USUARIOS</a><tr></tr>
                         </li>
                     @endif
                     @if(Auth::user()->rol_id == 2)
                         <li>
-                            <a class="btn btn-outline-dark" href= "{{ url('roles') }}">ROLES</a>
+                            <a class="btn btn-dark" href= "{{ url('roles') }}">ROLES</a>
                         </li>
                     @endif
 

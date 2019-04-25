@@ -9,9 +9,9 @@
 <div class="card-header"> LISTA ROLES </div> 
 
 
-<a href="{{ route('roles.create') }}" class="btn btn-outline-success" style="justify-content-right" >CREAR ROL</a><hr>
+<a href="{{ route('roles.create') }}" class="btn btn-success" style="justify-content-right" >CREAR ROL</a><hr>
 <div  style="text-align:center" >
-<table class="table table-striped table-bordered table-dark" class="justify-content-center" class="text-justify" >
+<table class="table table-striped table-bordered table-dark table-hover" class="justify-content-center" class="text-justify" >
 <thead class="thead-light">
 <th>ID</th>
 <th>NOMBRE</th>
@@ -27,8 +27,8 @@
 <td> {{ $roles -> descripcion }}</td>
 
 <TD>
-<a href="{{ route('roles.index.edit', $roles->id) }}" class="btn btn-outline-warning">EDITAR</a>
-<a href="{{ route('roles.index.destroy' , $roles->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-outline-danger">ELIMINAR</a>
+<a href="{{ route('roles.index.edit', $roles->id) }}" class="btn btn-warning">EDITAR</a>
+<a href="{{ route('roles.index.destroy' , $roles->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">ELIMINAR</a>
 </TD>
 </tr>
 @endforeach
