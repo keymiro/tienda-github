@@ -1,5 +1,5 @@
-@extends('store.partials.footer')
-@extends('layouts.app')
+@extends('store.template')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
