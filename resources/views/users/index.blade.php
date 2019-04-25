@@ -2,15 +2,17 @@
 @extends('store.template')
 
 @section('content')
-
+    <br>
 <div class="container">
 <div class="row justify-content-center">
-<div class="card">
+<div class="card card bg-secondary ">
 <div class="card-header" align="center"> <p>LISTA DE USUARIOS </p> </div>
-
-
-<a href="{{ url('/user/create') }}" class="btn btn-success" style="justify-content-right" >CREAR USUARIO</a><hr>
-<div class="table-responsive" style="text-align:center">
+    <br>
+<div class="container" align="center">
+<a href="{{ url('/user/create') }}" class="btn btn-success"  align="center" >CREAR USUARIO</a><br>
+</div>
+    <br>
+    <div class="container-fluid table-responsive" style="text-align:center">
 <table class="table table-striped   table-responsive table-hover" class="justify-content-center" >
 <thead class="thead-dark ">
 <th>ID</th>
@@ -37,6 +39,7 @@
 <a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-warning">EDITAR</a>
     <hr>
 <a href="{{ route('users.index.destroy' , $user->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">ELIMINAR</a>
+
 </TD>
 </tr>
 @endforeach
