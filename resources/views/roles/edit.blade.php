@@ -1,5 +1,6 @@
 @extends('store.template')
 @section('content')
+    <br>
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -52,6 +53,8 @@
                     {!! Form::close() !!}
                 </div>
             </div>
+            <br>
+            <br>
         </div>
     </div>
 </div>
