@@ -13,7 +13,7 @@
     <br>
 
 <div class="container" align="center">
-<a href="{{ route('roles.create') }}" class="btn btn-success" style="justify-content-right" >CREAR ROL</a><hr>
+<a href="{{ route('roles.create') }}" class="btn btn-dark" style="justify-content-right" > <i class="fa fa-plus-square"></i> </a><hr>
 </div>
 
 <div class="container-fluid table-responsive" style="text-align:center" >

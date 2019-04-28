@@ -11,7 +11,7 @@
 <div class="card-header" align="center">  <h1><span class="badge badge-primary">LISTA USUARIOS</span></h1></div>
     <br>
 <div class="container" align="center">
-<a href="{{ url('/user/create') }}" class="btn btn-success"  align="center" >CREAR USUARIO</a><br>
+<a href="{{ url('/user/create') }}" class="btn btn-dark"  align="center"> <i class="fa fa-user-plus"> </i> </a><br>
 </div>
     <br>
     <div class="container-fluid table-responsive" style="text-align:center">
