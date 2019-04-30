@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use Illuminate\Support\Facades\Route;
+
 Route::bind('product', function($slug){
 	return App\Product::where('slug', $slug)->first();
 });
@@ -18,7 +21,7 @@ Route::get('/',[
     'as'=>'index',
     'uses'=>'StoreController@index'
     ]);
-
+// traer el detalle del producto//
 Route::get('product/{slug}',[
     'as'=>'product-detail',
     'uses'=>'StoreController@show'
@@ -35,7 +38,7 @@ Route::get('cart/add/{product}', [
 	'as' => 'cart-add',
 	'uses' => 'CartController@add'
 ]);
-
+//borrar producto//
 Route::get('cart/delete/{product}',[
 	'as' => 'cart-delete',
 	'uses' => 'CartController@delete'
@@ -46,11 +49,27 @@ Route::get('cart/trash', [
 	'as' => 'cart-trash',
 	'uses' => 'CartController@trash'
 ]);
-
+//actulizar el total del precio al actulizar el numero de productos agregados//
 Route::get('cart/update/{product}/{quantity?}', [
 	'as' => 'cart-update',
 	'uses' => 'CartController@update'
+
 ]);
+//verificara que halla iniciado sesion antes de ir al detalle de la compra//
+
+Route::get('order-detail', [
+    'middleware' => 'auth',
+    'as' => 'order-detail',
+    'uses' => 'CartController@orderDetail'
+]);
+
+
+
+
+
+
+
+
 
 Auth::routes();
 

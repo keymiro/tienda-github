@@ -76,7 +76,7 @@
 					<i class="fa fa-chevron-circle-left"></i> Seguir comprando
 				</a>
 
-				<a href="{{ route('login') }}" class="btn btn-primary">
+				<a href="{{ route('order-detail') }}" class="btn btn-primary">
 				 Continuar <i class="fa fa-chevron-circle-right"></i>
 				</a>
                 </p>
