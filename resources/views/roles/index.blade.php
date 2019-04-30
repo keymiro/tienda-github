@@ -36,7 +36,7 @@
 <TD>
 <a href="{{ route('roles.index.edit', $roles->id) }}"  class="btn btn-warning" > <i class="fa fa-edit"></i> </a>
 
-<a href="{{ route('roles.index.destroy' , $roles->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">
+<a href="{{ route('roles.index.destroy' , $roles->id) }}" onclick="return confirm('¿Eliminar Rol?')" class="btn btn-danger">
     <i class="fa fa-remove"></i>
 </a>
 </TD>

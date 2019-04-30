@@ -42,7 +42,7 @@
                        
                         <div class="form-group">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Editar Usuario?')">
+                                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Editar Rol?')">
                                     Editar Rol
                                 </button>
                             </div>

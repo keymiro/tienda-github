@@ -69,8 +69,7 @@ class UsersController extends Controller
         $user->save();
         //$user->persona_id = $persona->id;
         //$user->rol_id = 1;
-        $user->password = Hash::make($request['password']);
-        $user->save();
+
         
         
         return redirect('/user');
