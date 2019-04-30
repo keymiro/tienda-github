@@ -71,3 +71,5 @@ Route::get('roles/{id}/create',['uses' => 'RolesController@create', 'as' => 'rol
 Route::get('roles/{id}/destroy',['uses' => 'RolesController@destroy', 'as' => 'roles.index.destroy']);
 Route::get('roles/{id}/edit',['uses' => 'RolesController@edit', 'as' => 'roles.index.edit']);
 
+//admin//
+Route::resource('admin/category', 'admin\CategoryController');
