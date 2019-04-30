@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDetallecomprasTable extends Migration
+class CreateDetallepedidosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateDetallecomprasTable extends Migration
      */
     public function up()
     {
-        Schema::create('detallecompras', function (Blueprint $table) {
+        Schema::create('detallepedidos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->decimal('precio');
             $table->Integer('cantidad');
@@ -30,6 +30,6 @@ class CreateDetallecomprasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detallecompras');
+        Schema::dropIfExists('detallepedidos');
     }
 }
