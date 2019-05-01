@@ -76,12 +76,14 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //rutas a los controladores de los cruds
+Route::group(['middleware' => 'auth'], function()
+{
 Route::resource('user','UsersController');
 Route::resource('roles','RolesController');
 
 
 //rutas a los metodos del del controlador del crud de usuarios
-Route::get('users/{id}/create',['uses' => 'UsersController@create', 'as' => 'users.index.create']);
+Route::get('users/{id}/create',[ 'uses' => 'UsersController@create', 'as' => 'users.index.create']);
 Route::get('users/{id}/destroy',['uses' => 'UsersController@destroy', 'as' => 'users.index.destroy']);
 Route::get('users/{id}/edit',['uses' => 'UsersController@edit', 'as' => 'users.index.edit']);
 
@@ -92,3 +94,4 @@ Route::get('roles/{id}/edit',['uses' => 'RolesController@edit', 'as' => 'roles.i
 
 //admin//
 Route::resource('admin/category', 'admin\CategoryController');
+});
