@@ -17,8 +17,14 @@
                     @endif
 
                     Ha iniciado sesion!
-                        <hr>
-                    Compra exitosa
+
+                            <hr>
+                            <p>
+                                <a href="{{ route('index') }}" class="btn btn-primary">
+                                    <i class="fa fa-chevron-circle-left"></i> Seguir comprando
+                                </a>
+                            </p>
+
                 </div>
             </div>
             <br>
