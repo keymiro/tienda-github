@@ -53,6 +53,9 @@
                     <a href="#" class="btn btn-warning">
                         Pagar con <i class="fa fa-cc-paypal fa-2x"></i>
                     </a>
+                    <a href="#" class="btn btn-dark">
+                      Generar PDF <i class="fa fa-file-pdf-o"></i>
+                    </a>
                 </p>
             </div>
         </div>
