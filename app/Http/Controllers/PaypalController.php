@@ -19,8 +19,14 @@ use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
 use PayPal\Exception\PayPalConnectionException;
+
 use App\Order;
 use App\OrderItem;
+
+
+
+
+
 
 use Illuminate\Http\Request;
 
@@ -59,6 +65,8 @@ class PaypalController extends Controller
      */
     public function postPayment()
     {
+
+
        $payer=new Payer();
        $payer->setPaymentMethod('paypal');
 
