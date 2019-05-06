@@ -33,26 +33,32 @@
                 @endif
                 @else
 
-                    @if(Auth::user()->rol_id == 2)
+                    @if(Auth::user()->rol_id == 2 &  3)
 
-                            <a class="btn btn-success" href= "{{ url('user') }}">USUARIOS</a>
+                            <a class="btn btn-success" href= "{{ url('user') }}">  <i class="fa fa-users" style="font-size:18px"></i> USUARIOS </a>
+
+
 
                     @endif
-                    @if(Auth::user()->rol_id == 2)
+                    @if(Auth::user()->rol_id == 2 & 3)
 
-                            <a  class="btn btn-success" href= "{{ url('roles') }}">ROLES</a>
+                            <a  class="btn btn-success" href= "{{ url('roles') }}">  <i class="fa fa-user-tag" style="font-size:18px"></i> ROLES </a>
 
                     @endif
 
                     <div class="nav-item dropdown">
-                        <button id="dropdownMenuButton" class="btn btn-secondary dropdown-toggle fa fa-user" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <button id="dropdownMenuButton"  class="btn btn-light dropdown-toggle fa fa-user" style="font-size:18px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} </button> <span class="caret"></span>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
+
                                 {{ __('Cerrar Sesíon') }}
+
+                                <i class="fa fa-sign-out-alt" style="font-size:18px"></i>
+
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

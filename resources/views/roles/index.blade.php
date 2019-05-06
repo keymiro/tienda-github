@@ -13,7 +13,7 @@
     <br>
 
 <div class="container" align="center">
-<a href="{{ route('roles.create') }}" class="btn btn-dark" style="justify-content-right" > <i class="fa fa-plus-square"></i> </a><hr>
+<a href="{{ route('roles.create') }}" class="btn btn-dark" style="justify-content-right" > <i class="fa fa-plus-square" style="font-size:20px"></i> </a><hr>
 </div>
 
 <div class="container-fluid table-responsive" style="text-align:center" >
@@ -34,10 +34,10 @@
 <td> {{ $roles -> descripcion }}</td>
 
 <TD>
-<a href="{{ route('roles.index.edit', $roles->id) }}"  class="btn btn-warning" > <i class="fa fa-edit"></i> </a>
+<a href="{{ route('roles.index.edit', $roles->id) }}"  class="btn btn-warning" > <i class="fa fa-edit" style="font-size:12px"></i> </a>
 
 <a href="{{ route('roles.index.destroy' , $roles->id) }}" onclick="return confirm('¿Eliminar Rol?')" class="btn btn-danger">
-    <i class="fa fa-remove"></i>
+    <i class="fa fa-trash-alt" style="font-size:12px"></i>
 </a>
 </TD>
 </tr>

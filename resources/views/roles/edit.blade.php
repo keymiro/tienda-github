@@ -41,8 +41,9 @@
                         </div>
                        
                         <div class="form-group">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Editar Rol?')">
+                            <div class="col-md-6 offset-md-5">
+                                <button type="submit" class="btn btn-light" onclick="return confirm('¿Editar Rol?')">
+                                    <i class="fa fa-check" style="font-size:20px"></i>
                                     Editar Rol
                                 </button>
                             </div>

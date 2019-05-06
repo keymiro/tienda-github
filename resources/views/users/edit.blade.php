@@ -112,8 +112,9 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary" onclick="return confirm('¿Editar Usuario?')">
+                            <div class="col-md-6 offset-md-5 ">
+                                <button type="submit" class="btn btn-light" onclick="return confirm('¿Editar Usuario?')">
+                                    <i class="fa fa-user-check" style="font-size:20px"></i>
                                     Editar
                                 </button>
                             </div>

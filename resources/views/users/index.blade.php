@@ -9,9 +9,14 @@
     <div class="product-block">
 
 <div class="card-header" align="center">  <h1><span class="badge badge-primary">LISTA USUARIOS</span></h1></div>
+
     <br>
 <div class="container" align="center">
-<a href="{{ url('/user/create') }}" class="btn btn-dark"  align="center"> <i class="fa fa-user-plus"> </i> </a><br>
+    @if(Auth::user()->rol_id == 2)
+
+            <a href="{{ url('/user/create') }}" class="btn btn-dark"  align="center"> <i class="fa fa-user-plus" style="font-size:20px"> </i> </a><br>
+
+    @endif
 </div>
     <br>
     <div class="container-fluid table-responsive" style="text-align:center">
@@ -38,10 +43,10 @@
 <td> {{ $user -> telefono }}</td>
 <td> {{ $user -> email }}</td>
 <TD>
-<a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-warning"> <i class="fa fa-edit"> </i> </a>
+<a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-warning"> <i class="fa fa-user-edit" style="font-size:12px" > </i> </a>
 
 <a href="{{ route('users.index.destroy' , $user->id) }}" onclick="return confirm('¿Eliminar Usuario?')" class="btn btn-danger">
-    <i class="fa fa-remove"></i>
+    <i class="fa fa-user-times" style="font-size:12px"></i>
 </a>
 
 </TD>
