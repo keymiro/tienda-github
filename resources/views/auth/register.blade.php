@@ -134,7 +134,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-5">
+                            <div class="col-md-6 offset-md-5 ">
                                 <button type="submit" class="btn btn-light">
                                     <i class="fa fa-user-check" style="font-size:20px"></i>
                                     {{ __('Registrarme') }}
