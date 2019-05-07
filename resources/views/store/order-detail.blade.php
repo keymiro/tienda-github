@@ -50,9 +50,16 @@
                         <i class="fa fa-chevron-circle-left"></i> Regresar
                     </a>
 
-                    <a href="{{route('payment')}}" class="btn btn-warning">
-                        Pagar con <i class="fa fa-cc-paypal fa-2x"></i>
+
+                    <a href="{{ route('payment') }}" class="btn btn-warning">
+
+
+                        Pagar con <i class="fab fa-paypal fa_custom fa-2x" > </i>
                     </a>
+
+
+
+
                     <a href="#" class="btn btn-dark">
                       Generar PDF <i class="fa fa-file-pdf-o"></i>
                     </a>

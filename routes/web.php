@@ -62,9 +62,18 @@ Route::get('order-detail', [
     'as' => 'order-detail',
     'uses' => 'CartController@orderDetail'
 ]);
+//envia el pedido
 
+Route::get('payment', array(
+    'as' => 'payment',
+    'uses' => 'PaypalController@postPayment',
+));
 
-
+// Después de realizar el pago Paypal redirecciona a esta ruta
+Route::get('payment/status', array(
+    'as' => 'payment.status',
+    'uses' => 'PaypalController@getPaymentStatus',
+));
 
 
 
@@ -99,14 +108,5 @@ Route::resource('admin/category', 'admin\CategoryController');
 Route::get('admin/home',function (){
    return view('admin.home');
 });
-//evia pedidos a paypal//
-Route::get('payment', array(
-    'as' => 'payment',
-    'uses' => 'PaypalController@postPayment',
-));
 
-// Después de realizar el pago Paypal redirecciona a esta ruta
-Route::get('payment/status', array(
-    'as' => 'payment.status',
-    'uses' => 'PaypalController@getPaymentStatus',
-));
+

@@ -18,65 +18,33 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
-use PayPal\Exception\PayPalConnectionException;
 
 use App\Order;
 use App\OrderItem;
 
-
-
-
-
-
-use Illuminate\Http\Request;
-
-class PaypalController extends Controller
+class PaypalController extends BaseController
 {
+    private $_api_context;
 
-    Private $_api_context;
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function __construct()
     {
-        //setup paypal-api context
+        // setup PayPal api context
         $paypal_conf = \Config::get('paypal');
         $this->_api_context = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function postPayment()
     {
-
-
-       $payer=new Payer();
-       $payer->setPaymentMethod('paypal');
+        $payer = new Payer();
+        $payer->setPaymentMethod('paypal');
 
         $items = array();
         $subtotal = 0;
         $cart = \Session::get('cart');
-        $currency = 'COP';
+        $currency = 'USD';
 
-        foreach($cart as $producto)
-        {
+        foreach($cart as $producto){
             $item = new Item();
             $item->setName($producto->name)
                 ->setCurrency($currency)
@@ -86,11 +54,10 @@ class PaypalController extends Controller
 
             $items[] = $item;
             $subtotal += $producto->quantity * $producto->price;
-       //
-         }
-        $item_list = new ItemList();
-        $item_list -> setItems($items);
+        }
 
+        $item_list = new ItemList();
+        $item_list->setItems($items);
 
         $details = new Details();
         $details->setSubtotal($subtotal)
@@ -107,7 +74,6 @@ class PaypalController extends Controller
         $transaction->setAmount($amount)
             ->setItemList($item_list)
             ->setDescription('Pedido de prueba en mi Laravel App Store');
-
 
         $redirect_urls = new RedirectUrls();
         $redirect_urls->setReturnUrl(\URL::route('payment.status'))
@@ -147,7 +113,7 @@ class PaypalController extends Controller
         }
 
         return \Redirect::route('cart-show')
-            ->with('message', 'Ups! Error desconocido.');
+            ->with('error', 'Ups! Error desconocido.');
 
     }
 
@@ -195,59 +161,45 @@ class PaypalController extends Controller
             \Session::forget('cart');
 
 
-            return \Redirect::route('index')
+            return \Redirect::route('home')
                 ->with('message', 'Compra realizada de forma correcta');
         }
-        return \Redirect::route('index')
+        return \Redirect::route('home')
             ->with('message', 'La compra fue cancelada');
     }
 
 
-
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+    private function saveOrder($cart)
     {
-        //
+        $subtotal = 0;
+        foreach($cart as $item){
+            $subtotal += $item->price * $item->quantity;
+        }
+
+        $order = Order::create([
+            'subtotal' => $subtotal,
+            'shipping' => 100,
+            'user_id' => \Auth::user()->id
+        ]);
+
+        foreach($cart as $item){
+            $this->saveOrderItem($item, $order->id);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    private function saveOrderItem($item, $order_id)
     {
-        //
+        OrderItem::create([
+            'quantity' => $item->quantity,
+            'price' => $item->price,
+            'product_id' => $item->id,
+            'order_id' => $order_id
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
+
+
+
+
 }
