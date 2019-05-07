@@ -28,6 +28,7 @@ class PaypalController extends BaseController
 
     public function __construct()
     {
+
         // setup PayPal api context
         $paypal_conf = \Config::get('paypal');
         $this->_api_context = new ApiContext(new OAuthTokenCredential($paypal_conf['client_id'], $paypal_conf['secret']));
@@ -161,10 +162,10 @@ class PaypalController extends BaseController
             \Session::forget('cart');
 
 
-            return \Redirect::route('home')
+            return \Redirect::route('index')
                 ->with('message', 'Compra realizada de forma correcta');
         }
-        return \Redirect::route('home')
+        return \Redirect::route('index')
             ->with('message', 'La compra fue cancelada');
     }
 
