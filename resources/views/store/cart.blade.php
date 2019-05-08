@@ -1,12 +1,15 @@
 @extends('store.template')
 @section('content')
     <div class="container text-center">
-        <div class="page-header">
-            <h1><i class="fa fa-shopping-cart"></i>Carrito de compras</h1>
-        </div>
+        <br>
             
             <div class="table-cart">
+
+
+                <h1><i class="fa fa-shopping-cart"></i>Carrito de compras</h1>
+                <hr>
                 @if(count($cart))
+
                 <p>
                     <a href="{{route('cart-trash')}}" class="btn btn-danger">
                     Vaciar carrito <i class="fa fa-trash"></i>

@@ -19,7 +19,7 @@
     @endif
 </div>
     <br>
-    <div class="container-fluid table-responsive" style="text-align:center">
+    <div class="container-fluid table-responsive" style="text-align:center" align="center">
 <table class="table table-striped   table-responsive table-hover" class="justify-content-center" >
 <thead class="thead-dark " >
 <th>ID</th>
