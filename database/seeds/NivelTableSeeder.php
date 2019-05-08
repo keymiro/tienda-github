@@ -3,8 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-
-class NiveldeestudioSeeder extends Seeder
+class NivelTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -18,15 +17,15 @@ class NiveldeestudioSeeder extends Seeder
 
         ]);
         DB::table('niveldeestudios')->insert([
+            'name' => 'maestria',
+
+        ]);
+        DB::table('niveldeestudios')->insert([
             'name' => 'profesional',
 
         ]);
         DB::table('niveldeestudios')->insert([
             'name' => 'especializacion',
-
-        ]);
-        DB::table('niveldeestudios')->insert([
-            'name' => 'maestria',
 
         ]);
     }

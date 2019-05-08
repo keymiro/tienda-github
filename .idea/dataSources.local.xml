@@ -23,6 +23,17 @@
     </data-source>
     <data-source name="carrito@localhost" uuid="d3c55139-4544-4b95-9650-44768c6afd43">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MARIADB" exact-version="0.0" />
+      <introspection-schemas>*:@</introspection-schemas>
+    </data-source>
+    <data-source name="github@localhost" uuid="3ad15db2-00b5-476d-ae31-144ef90fdf48">
+      <database-info product="MariaDB" version="10.1.38-MariaDB" jdbc-version="4.2" driver-name="MariaDB Connector/J" driver-version="2.4.1" dbms="MARIADB" exact-version="10.1.38" exact-driver-version="2.4">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:@</introspection-schemas>
     </data-source>
   </component>
 </project>

@@ -18,7 +18,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
-
+use App\Request;
 use App\Order;
 use App\OrderItem;
 
@@ -177,24 +177,24 @@ class PaypalController extends BaseController
             $subtotal += $item->price * $item->quantity;
         }
 
-        $order = Order::create([
+        $request = Request::create([
             'subtotal' => $subtotal,
             'shipping' => 100,
             'user_id' => \Auth::user()->id
         ]);
 
         foreach($cart as $item){
-            $this->saveOrderItem($item, $order->id);
+            $this->saveOrderItem($item, $request->id);
         }
     }
 
-    private function saveOrderItem($item, $order_id)
+    private function saveOrderItem($item, $order)
     {
         OrderItem::create([
             'quantity' => $item->quantity,
             'price' => $item->price,
             'product_id' => $item->id,
-            'order_id' => $order_id
+            'order_id' => $order
         ]);
     }
 
