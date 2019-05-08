@@ -18,7 +18,7 @@ use PayPal\Api\RedirectUrls;
 use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
 use PayPal\Api\Transaction;
-use App\Request;
+
 use App\Order;
 use App\OrderItem;
 
@@ -139,7 +139,7 @@ class PaypalController extends BaseController
 
         // PaymentExecution object includes information necessary
         // to execute a PayPal account payment.
-        // The payer_id is added to the request query parameters
+        // The payer_id is added to the order query parameters
         // when the user is redirected from paypal back to your site
         $execution = new PaymentExecution();
         $execution->setPayerId(\Input::get('PayerID'));
@@ -177,14 +177,14 @@ class PaypalController extends BaseController
             $subtotal += $item->price * $item->quantity;
         }
 
-        $request = Request::create([
+        $order = Order::create([
             'subtotal' => $subtotal,
             'shipping' => 100,
             'user_id' => \Auth::user()->id
         ]);
 
         foreach($cart as $item){
-            $this->saveOrderItem($item, $request->id);
+            $this->saveOrderItem($item, $order->id);
         }
     }
 
