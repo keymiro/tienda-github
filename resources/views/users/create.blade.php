@@ -133,6 +133,17 @@
                             </div>
                         </div>
 
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">profesional</a>
+                                <a class="dropdown-item" href="#">Bachillerato</a>
+                                <a class="dropdown-item" href="#">Especialización</a>
+                                <a class="dropdown-item" href="#">Maestria</a>
+                            </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-light">

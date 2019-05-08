@@ -31,6 +31,7 @@
 <th>EMAIL</th>
 <th>ACCION</th>
 </thead>
+
 <tbody>
 
 @foreach($users as $user)

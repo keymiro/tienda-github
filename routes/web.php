@@ -84,7 +84,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//rutas a los controladores de los cruds
+//rutas a los controladores de los cruds  restringe el acceso a vista del administrador
 Route::group(['middleware' => 'auth'], function()
 {
 Route::resource('user','UsersController');
