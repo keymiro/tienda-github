@@ -13,7 +13,7 @@
         <div class="row">
 
             <div class="col-md-6">
-                <div class="panel">
+                <div class="product-block">
 
                     <a href="#" class="btn btn-warning btn-block btn-home-admin">ROLES
                         <i class="fa fa-list-alt icon-home"></i></a>
@@ -21,9 +21,10 @@
             </div>
 
             <div class="col-md-6">
-                <div class="panel">
-                    <i class="fa fa-shopping-cart  icon-home"></i>
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS</a>
+                <div class="product-block">
+
+                    <a href="#" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS
+                        <i class="fa fa-shopping-cart  icon-home"></i></a>
                 </div>
             </div>
 
@@ -32,16 +33,18 @@
         <div class="row">
 
             <div class="col-md-6">
-                <div class="panel">
-                    <i class="fa fa-cc-paypal  icon-home"></i>
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">PEDIDOS</a>
+                <div class="product-block">
+
+                    <a href="#" class="btn btn-warning btn-block btn-home-admin">PEDIDOS
+                        <i class="fab fa-paypal fa_custom   icon-home"></i></a>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="panel">
-                   </i>
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">USUARIOS</a>
+                <div class="product-block">
+
+                    <a href="#" class="btn btn-warning btn-block btn-home-admin">USUARIOS
+                        <i class="fa fa-users  icon-home"></i></a>
                 </div>
             </div>
 
