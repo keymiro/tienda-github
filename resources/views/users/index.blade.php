@@ -28,6 +28,7 @@
 <TH>DOCUMENTO DE IDENTIFICACION</TH>
 <TH>DIRECCION</TH>  
 <TH>TELEFONO</TH>
+<th>ROL</th>
 <th>EMAIL</th>
 <th>ACCION</th>
 </thead>
@@ -41,6 +42,7 @@
 <td> {{ $user -> documento }}</td>
 <td> {{ $user -> direccion }}</td>
 <td> {{ $user -> telefono }}</td>
+<td> {{ $user -> rol_id }} </td>
 <td> {{ $user -> email }}</td>
 <TD>
 <a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-warning"> <i class="fa fa-user-edit" style="font-size:12px" > </i> </a>

@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('subtotal',10,2);
             $table->decimal('shipping',10,2);
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->nullable();
             $table->timestamps();
         });
     }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\User;   
 use App\Persona;
+use App\Role;
 
 
 class UsersController extends Controller
@@ -17,7 +18,6 @@ class UsersController extends Controller
      */
     public function index()
     {
-
         $users = User::orderBy('id', 'ASC')->paginate(5);
 
        return view ('users.index')->with('users',$users);
@@ -31,8 +31,8 @@ class UsersController extends Controller
      */
     public function create()
     {
-
-        return view ('users.create');
+        $roles = Role::all();
+        return view ('users.create', compact ('roles'));
 
     }
 
@@ -59,7 +59,7 @@ class UsersController extends Controller
         $user->name = $request['name'];
         $user->apellidos = $request['apellidos'];
         $user->persona_id = $persona->id;
-        $user->rol_id = 1;
+        $user->rol_id = $request['rol_id'];
         $user->documento = $request['documento'];
         $user->direccion = $request['direccion'];
         $user->fechanacimiento = $request['fechanacimiento'];
@@ -67,8 +67,7 @@ class UsersController extends Controller
         $user->email = $request['email'];
         $user->password = Hash::make($request['password']);
         $user->save();
-        //$user->persona_id = $persona->id;
-        //$user->rol_id = 1;
+
 
         
         
@@ -95,9 +94,9 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-       
+        $roles = Role::all();
         $user = User::find($id);
-        return view ('users.edit')->with('user',$user);
+        return view ('users.edit',  compact ('roles'))->with('user',$user);
 
     }
 
@@ -112,12 +111,13 @@ class UsersController extends Controller
     {
 
         $user = User::find($id);
-        $user->name =$request->name;
-        $user->apellidos =$request->apellidos;
-        $user->documento =$request->documento;
-        $user->direccion =$request->direccion;
-        $user->telefono =$request->telefono;
-        $user->email =$request->email;
+        $user->name = $request->name;
+        $user->apellidos = $request->apellidos;
+        $user->documento = $request->documento;
+        $user->direccion = $request->direccion;
+        $user->telefono = $request->telefono;
+        $user->rol_id = $request->rol_id;
+        $user->email = $request->email;
         $user->save();
 
         $persona = Persona::find($user->persona_id);
