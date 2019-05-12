@@ -101,7 +101,7 @@
 
                             <div class="col-md-6">
 
-                                <a  class="btn btn-light"> {{$user->rol_id}}</a>
+                                <a  class="btn btn-light"> {{$user->rol->nombre}}</a>
 
                                 @if ($errors->has('rol'))
                                     <span class="invalid-feedback" role="alert">

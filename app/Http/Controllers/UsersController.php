@@ -20,8 +20,10 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::orderBy('id', 'ASC')->paginate(5);
-       // $roles = DB::table('roles')->join('users', 'users.rol_id', '=', 'roles.rol_id')
-         //   ->select(roles . nombre)->get();
+        $users->each(function ($users) {
+            $users->rol;
+        });
+
         return view('users.index')->with('users', $users);
 
     }

@@ -26,7 +26,7 @@
                         <th>ID</th>
                         <th>NOMBRES</th>
                         <TH>APELLIDOS</TH>
-                        <TH>DOCUMENTO DE IDENTIFICACION</TH>
+                        <TH>DOCUMENTO</TH>
                         <TH>DIRECCION</TH>
                         <TH>TELEFONO</TH>
                         <th>ROL</th>
@@ -43,7 +43,7 @@
                                 <td> {{ $user -> documento }}</td>
                                 <td> {{ $user -> direccion }}</td>
                                 <td> {{ $user -> telefono }}</td>
-                                <td> {{ $user -> rol_id }} </td>
+                                <td> {{ $user -> rol-> nombre }} </td>
                                 <td> {{ $user -> email }}</td>
                                 <TD>
                                     <a href="{{ route('users.index.edit', $user->id) }}" class="btn btn-warning"> <i

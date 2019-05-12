@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Role;
+
 
 
 
@@ -19,13 +19,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','apellidos','documento','direccion','fechanacimiento','telefono','persona_id','rol_id', 'email', 'password',
     ];
 
-    public function role (){
-        return $this->belongsTo(App\Role);
 
-    }
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -47,5 +44,9 @@ class User extends Authenticatable
     public function orders()
     {
         return $this->hasMany('App\Order');
+    }
+    public function rol (){
+        return $this->belongsTo('App\Role');
+
     }
 }
