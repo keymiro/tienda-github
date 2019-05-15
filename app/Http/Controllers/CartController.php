@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Barryvdh\DomPDF\Facade as PDF;
 
 class CartController extends Controller
 {
@@ -136,5 +137,13 @@ class CartController extends Controller
         $total = $this->total();
 
         return view('store.order-detail', compact('cart', 'total'));
+
+    }
+    public function exportpdf()
+    {
+        $cart = \Session::get('cart');
+        $total = $this->total();
+        $pdf= PDF::loadView('store.pdf-detail', compact('cart','total'));
+        return $pdf->download('Factura.pdf');
     }
 }

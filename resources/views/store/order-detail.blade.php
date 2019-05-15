@@ -63,7 +63,7 @@
 
 
 
-                    <a href="#" class="btn btn-dark">
+                    <a href="{{route('exportar.pdf')}}" class="btn btn-dark">
                       Generar PDF <i class="fa fa-file-pdf-o"></i>
                     </a>
                 </p>

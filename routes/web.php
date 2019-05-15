@@ -108,5 +108,7 @@ Route::resource('admin/category', 'admin\CategoryController');
 Route::get('admin/home',function (){
    return view('admin.home');
 });
+//pdf//
+Route::get('expor-pdf','CartController@exportPdf')->name('exportar.pdf');
 
 
