@@ -102,14 +102,14 @@
 
                             <div class="col-md-6">
 
-                                <select name="rol_id" id="inputRol_id">
+                                <select  name="rol_id" id="inputRol_id" class="custom-select">
                                     <option value=""> Seleccione un Rol </option>
                                     @foreach($roles as $roles)
                                         <option value=" {{$roles['id']}} "> {{$roles['nombre']}} </option>
 
                                     @endforeach
 
-                                </select>
+                                </select >
 
                                 @if ($errors->has('rol_id'))
                                     <span class="invalid-feedback" role="alert">
