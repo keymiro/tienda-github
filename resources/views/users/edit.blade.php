@@ -116,7 +116,7 @@
 
                             <div class="col-md-6">
 
-                                <select name="rol_id" id="inputRol_id">
+                                <select name="rol_id" id="inputRol_id" class="custom-select">
 
                                     @foreach($roles as $roles)
 
