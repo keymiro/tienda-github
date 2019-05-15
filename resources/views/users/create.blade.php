@@ -98,6 +98,29 @@
 
 
                         <div class="form-group row">
+                            <label for="rol_id" class="col-md-4 col-form-label text-md-right">{{ __('Rol') }}</label>
+
+                            <div class="col-md-6">
+
+                                <select name="rol_id" id="inputRol_id">
+                                    <option value=""> Seleccione un Rol </option>
+                                    @foreach($roles as $roles)
+                                        <option value=" {{$roles['id']}} "> {{$roles['nombre']}} </option>
+
+                                    @endforeach
+
+                                </select>
+
+                                @if ($errors->has('rol_id'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('rol_id') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Correo Electronico') }}</label>
 
                             <div class="col-md-6">

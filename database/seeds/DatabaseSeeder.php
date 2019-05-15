@@ -19,7 +19,7 @@ class DatabaseSeeder extends Seeder
 
         $this->truncateTables([
 
-            'roles','personas', 'proveedores','cjcs','products','categories','niveldeestudios'
+            'roles','personas', 'proveedores','cjcs','products','categories','niveldeestudios',
         ]);
         model::unguard();
         $this->call(CategoryTableSeeder::class);
@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(RolesTableSeeder::class);
         $this->call(ProveedoresTableSeeder::class);
         $this->call(CjcsTableSeeder::class);
-        $this->call(NiveldeestudioSeeder::class);
+        $this->call(NivelTableSeeder::class);
         model::unguard();
 
     }

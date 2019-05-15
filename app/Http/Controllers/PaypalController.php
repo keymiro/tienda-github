@@ -139,7 +139,7 @@ class PaypalController extends BaseController
 
         // PaymentExecution object includes information necessary
         // to execute a PayPal account payment.
-        // The payer_id is added to the request query parameters
+        // The payer_id is added to the order query parameters
         // when the user is redirected from paypal back to your site
         $execution = new PaymentExecution();
         $execution->setPayerId(\Input::get('PayerID'));
@@ -188,13 +188,13 @@ class PaypalController extends BaseController
         }
     }
 
-    private function saveOrderItem($item, $order_id)
+    private function saveOrderItem($item, $order)
     {
         OrderItem::create([
             'quantity' => $item->quantity,
             'price' => $item->price,
             'product_id' => $item->id,
-            'order_id' => $order_id
+            'order_id' => $order
         ]);
     }
 
