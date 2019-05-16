@@ -89,6 +89,8 @@ Route::group(['middleware' => 'auth'], function()
 {
 Route::resource('user','UsersController');
 Route::resource('roles','RolesController');
+Route::resource('categorias','CategoriasController');
+
 
 
 //rutas a los metodos del del controlador del crud de usuarios
@@ -100,6 +102,11 @@ Route::get('users/{id}/edit',['uses' => 'UsersController@edit', 'as' => 'users.i
 Route::get('roles/{id}/create',['uses' => 'RolesController@create', 'as' => 'roles.index.create']);
 Route::get('roles/{id}/destroy',['uses' => 'RolesController@destroy', 'as' => 'roles.index.destroy']);
 Route::get('roles/{id}/edit',['uses' => 'RolesController@edit', 'as' => 'roles.index.edit']);
+
+//rutas a los metodos del del controlador del crud de categorias
+    Route::get('categorias/{id}/create',['uses' => 'CategoriasController@create', 'as' => 'categorias.index.create']);
+    Route::get('categorias/{id}/destroy',['uses' => 'CategoriasController@destroy', 'as' => 'categorias.index.destroy']);
+    Route::get('categorias/{id}/edit',['uses' => 'CategoriasController@edit', 'as' => 'categorias.index.edit']);
 
 
 });

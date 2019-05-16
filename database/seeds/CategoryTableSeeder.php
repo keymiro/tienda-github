@@ -19,13 +19,13 @@ class CategoryTableSeeder extends Seeder
         
             ['name'=>'super heroes',
             'slug'=> 'super-heores',
-            'description' =>'Lores ipsun dolor sit amet, consecteturadipising elit. tempore, perferendis!',
+            'description' =>'irom man',
             'color'=>'#440022'
            ],
            
             ['name'=>'Geek',
             'slug'=> 'geek',
-            'description' =>'Lores ipsun dolor sit amet, consecteturadipising elit. tempore, perferendis!',
+            'description' =>'captain marvel',
             'color'=>'#445500'
            ]
           

@@ -19,6 +19,7 @@ class CreateCategoriesTable extends Migration
 			$table->string('slug');
 			$table->text('description');
 			$table->string('color', 30);
+            $table->timestamps();
 			
 			
            // $table->timestamps();

@@ -46,7 +46,14 @@
 
                     @endif
 
-                    <div class="nav-item dropdown">
+                        @if(Auth::user()->rol_id == 2 & 3)
+
+                            <a  class="btn btn-success" href= "{{ url('categorias') }}">  <i class="fa fa-at" style="font-size:18px"></i> CATEGORIAS </a>
+
+                        @endif
+
+
+                        <div class="nav-item dropdown">
                         <button id="dropdownMenuButton"  class="btn btn-light dropdown-toggle fa fa-user" style="font-size:18px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} </button> <span class="caret"></span>
 

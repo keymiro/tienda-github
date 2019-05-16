@@ -9,7 +9,7 @@
 <div class="row justify-content-center">
     <div class="product-block">
 
-<div class="card-header" align="center"> <h1><span class="badge badge-primary">LISTA ROLES</span></h1></div>
+<div class="card-header" align="center"> <h1><span class="badge badge-light">  <i class="fa fa-user-tag"> </i>  LISTADO ROLES</span></h1></div>
     <br>
 
 <div class="container" align="center">

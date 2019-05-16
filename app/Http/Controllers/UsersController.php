@@ -146,15 +146,10 @@ class UsersController extends Controller
     //boton eliminar
     public function destroy($id)
     {
-
         $user = User::find($id);
         User::where('id', $id)->delete();
-
         $persona = Persona::find($user->persona_id);
         Persona::where('id', $persona->id)->delete();
-
-        //$user->delete ();
-
         return redirect('/user');
     }
 }
