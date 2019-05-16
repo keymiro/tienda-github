@@ -6,11 +6,13 @@
         <div class="product-block">
         <div class="page-header">
             <h1><i class="fa fa-shopping-cart"></i> Detalle del pedido</h1>
+            <hr>
         </div>
 
         <div class="page">
             <div class="table-responsive">
                 <h3>Datos del usuario</h3>
+                <hr>
                 <table class="table table-striped table-hover ">
                     <tr><td>Nombre:</td><td>{{ Auth::user()->name . " " . Auth::user()->last_name }}</td></tr>
                     <tr><td>Apellido:</td><td>{{ Auth::user()->apellidos }}</td></tr>
@@ -22,6 +24,7 @@
             <hr>
             <div class="table-responsive">
                 <h3>Datos del pedido</h3>
+                <hr>
                 <table class="table table-striped table-hover table-bordered">
                     <tr>
                         <th>Producto</th>
