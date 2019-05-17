@@ -57,7 +57,7 @@
                     <a href="{{ route('payment') }}" class="btn btn-warning">
 
 
-                        Pagar con <i class="fab fa-paypal fa_custom fa-2x"  > </i>
+                        Pagar con <i class="fab fa-paypal fa_custom fa-2x"  ></i>aypal
                     </a>
 
 
