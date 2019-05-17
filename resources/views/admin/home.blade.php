@@ -1,57 +1,70 @@
 @extends('store.template')
 
+
+
 @section('content')
-    <div clas="container text-center">
-    <div class="product-block">
+    <hr>
+    <div class="container text-center">
 
-        <div class="page-header">
+
             <h1><i class="fa fa-rocket"></i> MY LARAVEL STORE - DASHBOARD</h1>
+
+                  <div>
+                <div class="product-block">
+             <p>   <div>Bienvenido (a) &nbsp{{auth()->user()->name}} &nbsp{{auth()->user()->apellidos}} al Panel de administración de tu tienda en línea.</p>
+                </div>
+
+                <div>
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+
+                    <div class="row">
+
+
+            <div class="col-md-6">
+                <div>
+                    <h1 align="center">CATEGORIAS</h1>
+                    <a href="#" class="btn btn-warning btn-block btn-home-admin"><i class="fa fa-list-alt fa-5x  icon-home"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div>
+                    <h1 align="center">PRODUCTOS</h1>
+
+                    <a href="#" class="btn btn-warning btn-block btn-home-admin"> <i class="fa fa-shopping-cart fa-5x  icon-home"></i></a>
+                </div>
+            </div>
+
         </div>
-
-        <h2>Bienvenido(a)</h2><hr>
-
+            <hr>
         <div class="row">
 
-            <div class="col-md-6">
-                <div class="product-block">
 
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">ROLES
-                        <i class="fa fa-list-alt icon-home"></i></a>
+            <div class="col-md-6">
+                <div>
+                    <h1 align="center">PEDIDOS</h1>
+
+                    <a href="#" class="btn btn-warning btn-block btn-home-admin"><i class="fab fa-paypal fa_custom fa-5x  icon-home"></i></a>
                 </div>
             </div>
 
             <div class="col-md-6">
-                <div class="product-block">
-
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">PRODUCTOS
-                        <i class="fa fa-shopping-cart  icon-home"></i></a>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-6">
-                <div class="product-block">
-
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">PEDIDOS
-                        <i class="fab fa-paypal fa_custom   icon-home"></i></a>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="product-block">
-
-                    <a href="#" class="btn btn-warning btn-block btn-home-admin">USUARIOS
-                        <i class="fa fa-users  icon-home"></i></a>
+                <div>
+                 <h1 align="center">USUARIOS</h1>
+                    <a href="{{ url('user') }}" class="btn btn-warning btn-block btn-home-admin">
+                        <i class="fa fa-users fa-5x   icon-home"></i></a>
                 </div>
             </div>
 
         </div>
-
     </div>
- </div>
+    </div>
+
     <hr>
 
 @stop
