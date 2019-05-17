@@ -54,8 +54,8 @@
 
 
                         <div class="nav-item dropdown">
-                        <button id="dropdownMenuButton"  class="btn btn-light dropdown-toggle fa fa-user" style="font-size:18px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} </button> <span class="caret"></span>
+                        <button id="dropdownMenuButton"  class="btn btn-light dropdown-toggle " style="font-size:18px" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                         <i class="fa fa-user"></i>   {{ Auth::user()->name }} </button> <span class="caret"></span>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="{{ route('logout') }}"
