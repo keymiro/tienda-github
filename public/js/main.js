@@ -24,8 +24,10 @@ $(document).ready(function(){
 
                 for(var i=0; i<data.length; i++){
 
+
+
                     var fila = "<tr>";
-                    fila += "<td><img src='" + data[i].product.image + "' width='30'></td>";
+                    fila += "<td><img src='" + data[i].product.image + "' width='20px'  ></td>";
                     fila += "<td>" + data[i].product.name + "</td>";
                     fila += "<td>$ " + parseFloat(data[i].price).toFixed(2) + "</td>";
                     fila += "<td>" + parseInt(data[i].quantity) + "</td>";

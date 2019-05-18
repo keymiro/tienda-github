@@ -7,10 +7,10 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 
             </div>
-            <div class="modal-body">
-
-                <div class="table-responsive">
-                    <table  WIDTH="500" class="table table-stripped table-hover" id="table-detalle-pedido">
+            <div class="modal-body imgvista">
+<div>
+                <div class="table-responsive ">
+                    <table   class="table table-stripped table-hover" id="table-detalle-pedido">
                         <thead>
                         <tr>
                             <th>Imagen</th>
@@ -26,6 +26,7 @@
                     </table>
                 </div>
 
+            </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

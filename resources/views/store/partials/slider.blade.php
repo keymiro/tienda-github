@@ -6,6 +6,7 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
+
       <img class="d-block w-100" src="http://www.5sos.com.au/store/skin/frontend/default/5SOS/images/5sos_banner_retry_AU.JPG" alt="First slide">
     </div>
     <div class="carousel-item">
@@ -14,6 +15,7 @@
     <div class="carousel-item">
       <img class="d-block w-100" src="https://blog.deporteshalcon.net/wp-content/uploads/2018/12/rebajas-2018-1200x500.jpg" alt="Third slide">
     </div>
+
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
