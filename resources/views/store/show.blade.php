@@ -1,6 +1,7 @@
 @extends('store.template')
 
 @section('content')
+	<hr>
 <div class="container text-center">
 	<div class="page-header">
 	  <h1><span  class="badge badge-warning" class="fa fa-shopping-cart">Detalle del producto</span></h1>
