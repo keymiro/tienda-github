@@ -58,7 +58,8 @@
                                 <label for="color" class="col-md-4 col-form-label text-md-right">Color</label>
 
                                 <div class="col-md-6">
-                                    <input id="color" type="text" class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}" name="color" value="{{ old('color') }}" required autofocus>
+
+                                    <input id="color" type="color" class="form-control{{ $errors->has('color') ? ' is-invalid' : '' }}" name="color" value="{{ old('color') }}" required autofocus>
 
                                     @if ($errors->has('color'))
                                         <span class="invalid-feedback" role="alert">
