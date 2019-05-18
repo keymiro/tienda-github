@@ -1,7 +1,48 @@
 @extends('store.template')
-
-
 @section('content')
+
+  <!--cliente-->
+  @if(Auth::user()->rol_id == 1)
+    <div class="container">
+        <br>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header"  >Bienvenido (a) &nbsp{{auth()->user()->name}} &nbsp{{auth()->user()->apellidos}}
+                    </div>
+
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+                            <hr>
+
+                            <a href="{{ route('index') }}" class="btn btn-primary">
+                                <i class="fa fa-chevron-circle-left"></i> Seguir comprando
+                            </a>
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  @endif
+
+
+
+
+
+
+
+
+
+    <!--admin-->
+
+
+
     @if(Auth::user()->rol_id == 2 &  3)
     <hr>
     <div class="container text-center">
@@ -50,7 +91,7 @@
                         <div>
                             <h1 align="center">PEDIDOS</h1>
 
-                            <a href="#" class="btn btn-success btn-block btn-home-admin"><i class="fab fa-paypal fa_custom fa-5x  icon-home"></i></a>
+                            <a href="{{ route('order.index') }}" class="btn btn-success btn-block btn-home-admin"><i class="fab fa-paypal fa_custom fa-5x  icon-home"></i></a>
                         </div>
                     </div>
 

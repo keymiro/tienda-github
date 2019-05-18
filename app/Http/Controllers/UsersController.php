@@ -72,9 +72,10 @@ class UsersController extends Controller
         $user->email = $request['email'];
         $user->password = Hash::make($request['password']);
         $user->save();
+        $message = $request ? 'Persona agregada correctamente!' : 'La Persona NO pudo agregarse!';
+        return redirect('/user')->with('message', $message);
 
 
-        return redirect('/user');
 
     }
 
@@ -131,7 +132,10 @@ class UsersController extends Controller
         $persona->telefono = $request->telefono;
         $persona->save();
 
-        return redirect('/user');
+        $message = $id ? 'Persona editada correctamente!' : 'La Persona NO pudo editarse!';
+        return redirect('/user')->with('message', $message);
+
+
 
 
     }
@@ -150,6 +154,9 @@ class UsersController extends Controller
         User::where('id', $id)->delete();
         $persona = Persona::find($user->persona_id);
         Persona::where('id', $persona->id)->delete();
-        return redirect('/user');
+        $message = $id ? 'Persona eliminada correctamente!' : 'La Persona NO pudo eliminarse!';
+        return redirect('/user')->with('message', $message);
+
+
     }
 }

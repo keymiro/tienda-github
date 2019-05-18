@@ -1,3 +1,8 @@
+
+
+
+
+
 body
 {
     background: rgba(0, 0, 0, 0.14);
@@ -105,3 +110,11 @@ ul.redes li a
  {
      width: 50px
  }
+
+.page
+{
+    background: #fff;
+    border-radius: 1em;
+    margin-bottom: 30px;
+    padding: 1em;
+}

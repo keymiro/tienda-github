@@ -114,7 +114,11 @@ Route::get('productos/{id}/create',['uses' => 'ProductsController@create', 'as' 
 Route::get('productos/{id}/destroy',['uses' => 'ProductsController@destroy', 'as' => 'productos.index.destroy']);
 Route::get('productos/{id}/edit',['uses' => 'ProductsController@edit', 'as' => 'productos.index.edit']);
 
+    Route::get('orders', [ 'uses' => 'OrderController@index', 'as' => 'order.index']);
 
+    Route::post('order/get-items', ['uses' => 'OrderController@getItems','as' => 'order.getItems']);
+
+    Route::get('order/{id}', ['uses' => 'OrderController@destroy','as' => 'order.destroy']);
 });
 //admin//
 Route::resource('admin/category', 'admin\CategoryController');

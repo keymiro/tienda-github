@@ -42,7 +42,11 @@ class CategoriasController extends Controller
         $categorias->description = $request['description'];
         $categorias->color = $request['color'];
         $categorias->save();
-        return redirect('/categorias');
+        $message = $request ? 'Categoria agregada correctamente!' : 'La Categoria NO pudo agregarse!';
+        return redirect('/categorias')->with('message', $message);
+
+
+
     }
 
     /**
@@ -83,7 +87,8 @@ class CategoriasController extends Controller
         $categorias->description = $request->description;
         $categorias->color = $request->color;
         $categorias->save();
-        return redirect('/categorias');
+        $message = $id ? 'Categoria editada correctamente!' : 'La Categoria NO pudo editarse!';
+        return redirect('/categorias')->with('message', $message);
     }
 
     /**
@@ -96,6 +101,9 @@ class CategoriasController extends Controller
     {
         $categorias = Category::find($id);
         Category::where('id', $id)->delete();
-        return redirect('/categorias');
+        $message = $id ? 'Categoria eliminada correctamente!' : 'La Categoria NO pudo eliminarse!';
+        return redirect('/categorias')->with('message', $message);
+
+
     }
 }

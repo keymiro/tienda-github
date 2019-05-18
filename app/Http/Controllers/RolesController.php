@@ -43,10 +43,11 @@ class RolesController extends Controller
         $roles->descripcion = $request['descripcion'];
 
         $roles->save();
-        
-        
-        return redirect('/roles');
-        
+
+        $message = $request ? 'Rol agregado correctamente!' : 'El Rol NO pudo agregarse!';
+        return redirect('/roles')->with('message', $message);;
+
+
 
     }
 
@@ -86,7 +87,8 @@ class RolesController extends Controller
         $roles->nombre = $request->nombre;
         $roles->descripcion = $request->descripcion;
         $roles->save();
-        return redirect('/roles');
+        $message = $id ? 'Rol editado correctamente!' : 'El Rol NO pudo editarse!';
+        return redirect('/roles')->with('message', $message);
         
 
 //        $roles->save();
@@ -104,7 +106,11 @@ class RolesController extends Controller
     {
         $roles = Role::find($id);
         Role::where('id', $id)->delete();
-        return redirect('/roles');
+        $message = $id ? 'Rol eliminado correctamente!' : 'El Rol NO pudo eliminarse!';
+        return redirect('/roles')->with('message', $message);
+
+
+
 
     }
 }
