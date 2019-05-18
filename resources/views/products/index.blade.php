@@ -7,14 +7,14 @@
         <div class="row justify-content-center">
             <div class="product-block">
 
-                <div class="card-header" align="center"><h1><span class="badge badge-light"> <i class="fa fa-at"> </i>  LISTADO DE CATEGORIAS </span></h1>
+                <div class="card-header" align="center"><h1><span class="badge badge-light"> <i class="fa fa-at"> </i>  LISTADO DE PRODUCTOS </span></h1>
                 </div>
 
                 <br>
                 <div class="container" align="center">
                     @if(Auth::user()->rol_id == 2)
 
-                        <a href="{{ url('/categorias/create') }}" class="btn btn-dark" align="center"> <i
+                        <a href="{{ url('/productos/create') }}" class="btn btn-dark" align="center"> <i
                                     class="fa fa-plus" style="font-size:20px"> </i> </a><br>
 
                     @endif
@@ -27,24 +27,32 @@
                         <th>NOMBRE</th>
                         <TH>SLUG</TH>
                         <TH>DESCRIPCION</TH>
-                        <TH>COLOR</TH>
+                        <TH>ESTRACTO</TH>
+                        <th>PRECIO</th>
+                        <th>IMAGEN</th>
+                        <th>VISIBILIDAD</th>
+                        <th>CATEGORIA</th>
                         <th>ACCION</th>
                         </thead>
                         <tbody>
 
-                        @foreach($categorias as $categorias)
+                        @foreach($productos as $productos)
                             <tr>
-                                <td> {{ $categorias -> id }}</td>
-                                <td> {{ $categorias -> name }}</td>
-                                <td> {{ $categorias -> slug }}</td>
-                                <td> {{ $categorias -> description }}</td>
-                                <td> {{ $categorias -> color }}</td>
+                                <td> {{ $productos -> id }}</td>
+                                <td> {{ $productos -> name }}</td>
+                                <td> {{ $productos -> slug }}</td>
+                                <td> {{ $productos -> description }}</td>
+                                <td> {{ $productos -> extract }}</td>
+                                <td> {{ $productos -> price }}</td>
+                                <td> <img src="{{ $productos -> image }}"> </td>
+                                <td> {{ $productos -> visible }}</td>
+                                <td> {{ $productos -> category -> name }}</td>
                                 <TD>
-                                    <a href="{{ route('categorias.index.edit', $categorias->id) }}" class="btn btn-warning"> <i
+                                    <a href="{{ route('productos.index.edit', $productos->id) }}" class="btn btn-warning"> <i
                                                 class="fa fa-edit" style="font-size:12px"> </i> </a>
 
-                                    <a href="{{ route('categorias.index.destroy', $categorias->id) }}"
-                                       onclick="return confirm('¿Eliminar Categoria?')" class="btn btn-danger">
+                                    <a href="{{ route('productos.index.destroy', $productos->id) }}"
+                                       onclick="return confirm('¿Eliminar Producto?')" class="btn btn-danger">
                                         <i class="fa fa-trash-alt" style="font-size:12px"></i>
                                     </a>
 
@@ -62,3 +70,4 @@
         </div>
     </div>
 @endsection
+

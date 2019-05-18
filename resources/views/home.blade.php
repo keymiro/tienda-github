@@ -37,7 +37,7 @@
                         <div>
                             <h1 align="center">PRODUCTOS</h1>
 
-                            <a href="#" class="btn btn-success btn-block btn-home-admin"> <i class="fa fa-shopping-cart fa-5x  icon-home"></i></a>
+                            <a href="{{ url('productos') }}" class="btn btn-success btn-block btn-home-admin"> <i class="fa fa-shopping-cart fa-5x  icon-home"></i></a>
                         </div>
                     </div>
 

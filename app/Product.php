@@ -14,5 +14,10 @@ class Product extends Model
     public function order_item()
     {
         return $this->hasOne('App\OrderItem');
-    }//
+    }
+
+    public function category (){
+        return $this->belongsTo('App\Category');
+
+    }
 }

@@ -23,11 +23,8 @@ class CreateProductsTable extends Migration
 			$table->decimal('price', 5, 2);
 			$table->string('image', 300);
 			$table->boolean('visible');
-			$table->integer('category_id')->unsigned();
-			$table->foreign('category_id')
-				  ->references('id')
-				  ->on('categories')
-				  ->onDelete('cascade');
+			$table->unsignedBigInteger('category_id');
+			$table->foreign('category_id')->references('id')->on('categories');
 			$table->timestamps();
         });
     }

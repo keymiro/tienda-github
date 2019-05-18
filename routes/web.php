@@ -90,6 +90,7 @@ Route::group(['middleware' => 'auth'], function()
 Route::resource('user','UsersController');
 Route::resource('roles','RolesController');
 Route::resource('categorias','CategoriasController');
+Route::resource('productos','ProductsController');
 
 
 
@@ -104,9 +105,14 @@ Route::get('roles/{id}/destroy',['uses' => 'RolesController@destroy', 'as' => 'r
 Route::get('roles/{id}/edit',['uses' => 'RolesController@edit', 'as' => 'roles.index.edit']);
 
 //rutas a los metodos del del controlador del crud de categorias
-    Route::get('categorias/{id}/create',['uses' => 'CategoriasController@create', 'as' => 'categorias.index.create']);
-    Route::get('categorias/{id}/destroy',['uses' => 'CategoriasController@destroy', 'as' => 'categorias.index.destroy']);
-    Route::get('categorias/{id}/edit',['uses' => 'CategoriasController@edit', 'as' => 'categorias.index.edit']);
+Route::get('categorias/{id}/create',['uses' => 'CategoriasController@create', 'as' => 'categorias.index.create']);
+Route::get('categorias/{id}/destroy',['uses' => 'CategoriasController@destroy', 'as' => 'categorias.index.destroy']);
+Route::get('categorias/{id}/edit',['uses' => 'CategoriasController@edit', 'as' => 'categorias.index.edit']);
+
+//rutas a los metodos del del controlador del crud de productos
+Route::get('productos/{id}/create',['uses' => 'ProductsController@create', 'as' => 'productos.index.create']);
+Route::get('productos/{id}/destroy',['uses' => 'ProductsController@destroy', 'as' => 'productos.index.destroy']);
+Route::get('productos/{id}/edit',['uses' => 'ProductsController@edit', 'as' => 'productos.index.edit']);
 
 
 });
