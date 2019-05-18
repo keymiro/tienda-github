@@ -10,6 +10,7 @@
                 <div class="card">
                     <div class="card-header"  >Bienvenido (a) &nbsp{{auth()->user()->name}} &nbsp{{auth()->user()->apellidos}}
                     </div>
+                    <hr>
 
                     <div class="card-body">
                         @if (session('status'))
@@ -22,13 +23,15 @@
                             <a href="{{ route('index') }}" class="btn btn-primary">
                                 <i class="fa fa-chevron-circle-left"></i> Seguir comprando
                             </a>
-                        <hr>
+
 
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
   @endif
 
 
@@ -46,16 +49,16 @@
     @if(Auth::user()->rol_id == 2 &  3)
     <hr>
     <div class="container text-center">
-
+        <div class="product-block">
 
         <h1><i class="fa fa-rocket"></i>  DASHBOARD</h1>
         <hr>
 
         <div>
-            <div class="product-block">
+
                 <p>   <div>Bienvenido (a) &nbsp{{auth()->user()->name}} &nbsp{{auth()->user()->apellidos}} al Panel de administración de tu tienda en línea.</p>
             </div>
-
+            <hr>
             <div>
                 @if (session('status'))
                     <div class="alert alert-success" role="alert">
@@ -102,12 +105,10 @@
                                 <i class="fa fa-users fa-5x   icon-home"></i></a>
                         </div>
                     </div>
-
+                    <hr>
                 </div>
             </div>
         </div>
-
-        <hr>
-        <br>
+        <br><br><br></div>
     @endif
 @endsection

@@ -5,7 +5,7 @@
         <div class="product-block">
         <div class="page-header">
             <h1>
-                <span class="badge badge-light"> <i class="fa fa-shopping-cart"></i> LISTA DE PEDIDOS </span>
+                <span class="badge badge-light"> <i class="fab fa-paypal fa_custom "></i> LISTA DE PEDIDOS </span>
             </h1>
             <hr>
         </div>
