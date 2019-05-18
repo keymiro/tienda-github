@@ -26,7 +26,6 @@
                         <th>ID</th>
                         <th>NOMBRE</th>
                         <TH>SLUG</TH>
-                        <TH>DESCRIPCION</TH>
                         <TH>ESTRACTO</TH>
                         <th>PRECIO</th>
                         <th>IMAGEN</th>
@@ -41,11 +40,10 @@
                                 <td> {{ $productos -> id }}</td>
                                 <td> {{ $productos -> name }}</td>
                                 <td> {{ $productos -> slug }}</td>
-                                <td> {{ $productos -> description }}</td>
                                 <td> {{ $productos -> extract }}</td>
                                 <td> {{ $productos -> price }}</td>
-                                <td> <img src="{{ $productos -> image }}"> </td>
-                                <td> {{ $productos -> visible }}</td>
+                                <td> <img src="{{ $productos -> image }}" style='width:80px'> </td>
+                                <td> {{ $productos -> visible ==1 ? "Si" : "No" }}</td>
                                 <td> {{ $productos -> category -> name }}</td>
                                 <TD>
                                     <a href="{{ route('productos.index.edit', $productos->id) }}" class="btn btn-warning"> <i

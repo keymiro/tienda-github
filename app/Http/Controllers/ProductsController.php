@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Category::all();
+        return view ('products.create', compact('categorias'));
     }
 
     /**
@@ -40,7 +42,20 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $productos = new Product($request->all());
+        $productos->name = $request['name'];
+        $productos->slug = $request['slug'];
+        $productos->description = $request['description'];
+        $productos->extract = $request['extract'];
+        $productos->price = $request['price'];
+        $productos->image = $request['image'];
+        $productos->visible = $request['visible'];
+        $productos->category_id = $request['category_id'];
+
+        $productos->save();
+
+        $message = $request ? 'Producto agregado correctamente!' : 'El Producto NO pudo agregarse!';
+        return redirect('/productos')->with('message', $message);;
     }
 
     /**
