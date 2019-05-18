@@ -48,7 +48,7 @@
 
                         @if(Auth::user()->rol_id == 2 & 3)
 
-                            <a  class="btn btn-success" href= "{{ url('categorias') }}">  <i class="fa fa-at" style="font-size:18px"></i> CATEGORIAS </a>
+                            <a  class="btn btn-success" href= "{{ url('home') }}">  <i class="fa fa-rocket" style="font-size:18px"></i> DASHBOARD </a>
 
                         @endif
 

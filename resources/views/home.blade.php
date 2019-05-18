@@ -29,7 +29,7 @@
                     <div class="col-md-6">
                         <div>
                             <h1 align="center">CATEGORIAS</h1>
-                            <a href="#" class="btn btn-success btn-block btn-home-admin"><i class="fa fa-list-alt fa-5x  icon-home"></i></a>
+                            <a href="categorias" class="btn btn-success btn-block btn-home-admin"><i class="fa fa-list-alt fa-5x  icon-home"></i></a>
                         </div>
                     </div>
 
