@@ -14,7 +14,7 @@
                 <div class="container" align="center">
                     @if(Auth::user()->rol_id == 2)
 
-                        <a href="{{ url('/productos/create') }}" class="btn btn-dark" align="center"> <i
+                        <a href="{{ url('/productos/create') }}" class="btn btn-success btn-block" align="center"> <i
                                     class="fa fa-plus" style="font-size:20px"> </i> </a><br>
 
                     @endif
@@ -65,7 +65,8 @@
 
                 </div>
 
-
+                <hr>
+                <a href="javascript:history.back()" class="btn btn-block btn-dark"> Volver Atrás</a>
             </div>
         </div>
     </div>

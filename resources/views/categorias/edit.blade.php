@@ -77,11 +77,10 @@
                                     </button>
                                 </div>
                             </div>
+
                         {!! Form::close() !!}
                         <hr>
-                        <a >
-                        <input class="btn btn-success" type="button" onclick="history.back()" name="volver atrás" value="volver atrás" >
-                        </a>
+                        <a href="javascript:history.back()" class="btn btn-block btn-dark"><i class="fa fa-arrow-left "></i>  Volver Atrás</a>
                     </div>
                 </div>
             </div>

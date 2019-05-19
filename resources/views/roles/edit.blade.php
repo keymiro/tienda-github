@@ -48,12 +48,16 @@
                                 </button>
                             </div>
                         </div>
-                    
+                        <hr>
+                        <a href="javascript:history.back()" class="btn btn-block btn-dark"><i class="fa fa-arrow-circle-left "></i>  Volver Atrás</a>
                     <!-- </form> -->
    
                     {!! Form::close() !!}
                 </div>
+
             </div>
+
+
             <br>
             <br>
         </div>

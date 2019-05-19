@@ -14,7 +14,7 @@
                 <div class="container" align="center">
                     @if(Auth::user()->rol_id == 2)
 
-                        <a href="{{ url('/categorias/create') }}" class="btn btn-dark" align="center"> <i
+                        <a href="{{ url('/categorias/create') }}" class="btn btn-dark btn-block" align="center"> <i
                                     class="fa fa-plus" style="font-size:20px"> </i> </a><br>
 
                     @endif
@@ -56,6 +56,8 @@
                     </table>
 
                 </div>
+                <hr>
+                <a href="javascript:history.back()" class="btn btn-block btn-dark"><i class="fa fa-arrow-left "></i>  Volver Atrás</a>
 
 
             </div>

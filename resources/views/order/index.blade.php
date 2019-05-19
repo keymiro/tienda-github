@@ -65,6 +65,8 @@
             <?php echo $orders->render(); ?>
 
         </div>
+            <hr>
+            <a href="javascript:history.back()" class="btn btn-block btn-dark"><i class="fa fa-arrow-left "></i>  Volver Atrás</a>
             </div>
     </div>
 

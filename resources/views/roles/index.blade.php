@@ -13,7 +13,7 @@
     <br>
 
 <div class="container" align="center">
-<a href="{{ route('roles.create') }}" class="btn btn-dark" style="justify-content-right" > <i class="fa fa-plus-square" style="font-size:20px"></i> </a><hr>
+<a href="{{ route('roles.create') }}" class="btn btn-success btn-block" style="justify-content-right" > <i class="fa fa-plus-square" style="font-size:20px"></i> </a><hr>
 </div>
 
 <div class="container-fluid table-responsive" style="text-align:center" >
@@ -48,7 +48,8 @@
 
 </div>
 
-
+        <hr>
+        <a href="javascript:history.back()" class="btn btn-block btn-dark"> Volver Atrás</a>
 
 
 

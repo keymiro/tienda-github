@@ -156,6 +156,8 @@
                                 </button>
                             </div>
                         </div>
+                        <hr>
+                        <a href="javascript:history.back()" class="btn btn-block btn-dark"> Volver Atrás</a>
                     <!-- </form> -->
                     {!! Form::close() !!}
                 </div>
