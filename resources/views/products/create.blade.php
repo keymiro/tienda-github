@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Registrar Rol</div>
+                    <div class="card-header">Registrar Producto</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('productos.store') }}">
@@ -40,22 +40,9 @@
                                 </div>
                             </div>
 
-                            <div class="form-group row">
-                                <label for="description" class="col-md-4 col-form-label text-md-right">Descripcion</label>
-
-                                <div class="col-md-6">
-                                    <input id="description" type="text" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" value="{{ old('description') }}" required autofocus>
-
-                                    @if ($errors->has('description'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('description') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
 
                             <div class="form-group row">
-                                <label for="extract" class="col-md-4 col-form-label text-md-right">Extracto</label>
+                                <label for="extract" class="col-md-4 col-form-label text-md-right">Descripcion</label>
 
                                 <div class="col-md-6">
                                     <input id="extract" type="text" class="form-control{{ $errors->has('extract') ? ' is-invalid' : '' }}" name="extract" value="{{ old('extract') }}" required autofocus>
@@ -100,7 +87,11 @@
                                 <label for="visible" class="col-md-4 col-form-label text-md-right">Visibilidad</label>
 
                                 <div class="col-md-6">
-                                    <input id="visible" type="text" class="form-control{{ $errors->has('visible') ? ' is-invalid' : '' }}" name="visible" value="{{ old('visible') }}" required autofocus>
+                                    <select name="visible" id="inputVisible" class="custom-select">
+                                        <option value=""> Seleccione una Visibilidad </option>
+                                        <option value="1"> Si </option>
+                                        <option value="2"> No </option>
+                                    </select>
 
                                     @if ($errors->has('visible'))
                                         <span class="invalid-feedback" role="alert">

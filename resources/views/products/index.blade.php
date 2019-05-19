@@ -26,7 +26,7 @@
                         <th>ID</th>
                         <th>NOMBRE</th>
                         <TH>SLUG</TH>
-                        <TH>ESTRACTO</TH>
+                        <TH>DESCRIPCION</TH>
                         <th>PRECIO</th>
                         <th>IMAGEN</th>
                         <th>VISIBILIDAD</th>

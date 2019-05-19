@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
 			$table->string('name', 255);
 			$table->string('slug');
-			$table->text('description');
+			$table->text('description')->nullable();
 			$table->string('extract', 300);
 			$table->decimal('price', 5, 2);
 			$table->string('image', 300);

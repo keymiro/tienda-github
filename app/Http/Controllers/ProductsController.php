@@ -45,7 +45,6 @@ class ProductsController extends Controller
         $productos = new Product($request->all());
         $productos->name = $request['name'];
         $productos->slug = $request['slug'];
-        $productos->description = $request['description'];
         $productos->extract = $request['extract'];
         $productos->price = $request['price'];
         $productos->image = $request['image'];
@@ -77,7 +76,9 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categorias = Category::all();
+        $productos = Product::find($id);
+        return view ('products.edit', compact('categorias'))->with('productos',$productos);
     }
 
     /**
@@ -89,7 +90,17 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $productos = Product::find($id);
+        $productos->name = $request['name'];
+        $productos->slug = $request['slug'];
+        $productos->extract = $request['extract'];
+        $productos->price = $request['price'];
+        $productos->image = $request['image'];
+        $productos->visible = $request['visible'];
+        $productos->category_id = $request['category_id'];
+        $productos->save();
+        $message = $id ? 'Producto editado correctamente!' : 'El Producto NO pudo editarse!';
+        return redirect('/productos')->with('message', $message);
     }
 
     /**
@@ -100,6 +111,9 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productos = Product::find($id);
+        Product::where('id', $id)->delete();
+        $message = $id ? 'Producto eliminado correctamente!' : 'El Producto NO pudo eliminarse!';
+        return redirect('/productos')->with('message', $message);
     }
 }
