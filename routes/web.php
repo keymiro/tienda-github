@@ -119,13 +119,13 @@ Route::get('productos/{id}/edit',['uses' => 'ProductsController@edit', 'as' => '
     Route::post('order/get-items', ['uses' => 'OrderController@getItems','as' => 'order.getItems']);
 
     Route::get('order/{id}', ['uses' => 'OrderController@destroy','as' => 'order.destroy']);
+
+
+    //pdf//
+    Route::get('expor-pdf','CartController@exportPdf')->name('exportar.pdf');
+
 });
-//admin//
-Route::resource('admin/category', 'admin\CategoryController');
-Route::get('admin/home',function (){
-   return view('admin.home');
-});
-//pdf//
-Route::get('expor-pdf','CartController@exportPdf')->name('exportar.pdf');
+
+
 
 
