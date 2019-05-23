@@ -1,8 +1,18 @@
 @extends('store.template')
 
 @section('content')
+    @if(Auth::user()->rol_id == 1)
+        <hr>
+        <div class="container-fluid" align="center">
+            <h4>ACCESO NO AUTORIZADO
+                <a href="{{ route('index') }}" class="btn btn-primary">
+                    <i class="fa fa-chevron-circle-left"></i> VOLVER AL CATALOGO
+                </a> </h4>
+            <hr>
+            @endif
     <br>
 <div class="container">
+    @if(Auth::user()->rol_id == 2 &  3)
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -176,4 +186,5 @@
         </div>
     </div>
 </div>
+    @endif
 @endsection

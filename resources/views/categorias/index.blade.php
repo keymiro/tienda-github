@@ -4,6 +4,18 @@
     <br>
     <div class="container">
 
+        @if(Auth::user()->rol_id == 1)
+            <hr>
+            <div class="container-fluid" align="center">
+                <h4>ACCESO NO AUTORIZADO
+                    <a href="{{ route('index') }}" class="btn btn-primary">
+                        <i class="fa fa-chevron-circle-left"></i> VOLVER AL CATALOGO
+                    </a> </h4>
+                <hr>
+                @endif
+
+
+        @if(Auth::user()->rol_id == 2 &  3)
         <div class="row justify-content-center">
             <div class="product-block">
 
@@ -12,12 +24,12 @@
 
                 <br>
                 <div class="container" align="center">
-                    @if(Auth::user()->rol_id == 2)
+
 
                         <a href="{{ url('/categorias/create') }}" class="btn btn-dark btn-block" align="center"> <i
                                     class="fa fa-plus" style="font-size:20px"> </i> </a><br>
 
-                    @endif
+
                 </div>
                 <br>
                 <div class="container-fluid table-responsive" style="text-align:center" align="center">
@@ -63,4 +75,5 @@
             </div>
         </div>
     </div>
+    @endif
 @endsection

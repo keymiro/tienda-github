@@ -1,6 +1,18 @@
 @extends('store.template')
 
 @section('content')<br>
+@if(Auth::user()->rol_id == 1)
+    <hr>
+    <div class="container-fluid" align="center">
+        <h4>ACCESO NO AUTORIZADO
+            <a href="{{ route('index') }}" class="btn btn-primary">
+                <i class="fa fa-chevron-circle-left"></i> VOLVER AL CATALOGO
+            </a> </h4>
+        <hr>
+        @endif
+
+
+@if(Auth::user()->rol_id == 2 &  3)
     <div class="container text-center">
         <div class="product-block">
         <div class="page-header">
@@ -71,5 +83,5 @@
     </div>
 
     @include('store.partials.modal-detalle-pedido')
-
+@endif
 @stop
